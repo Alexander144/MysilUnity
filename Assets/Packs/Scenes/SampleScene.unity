@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256354599}
   - component: {fileID: 256354598}
+  - component: {fileID: 256354600}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -159,6 +160,7 @@ MonoBehaviour:
   - {fileID: 1936653001}
   - {fileID: 2106334377}
   - {fileID: 1149623332}
+  SpawnManager: {fileID: 256354600}
 --- !u!4 &256354599
 Transform:
   m_ObjectHideFlags: 0
@@ -173,6 +175,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256354600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256354597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f556945c73666140ad0246218de40a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartSpawnWineBottles: 0
+  SpawningPoint: {fileID: 629718479}
+  WineBottle: {fileID: 3274329598148458338, guid: ca9864cf35b229541a77f898dceb3a45,
+    type: 3}
 --- !u!1 &410545729
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629718475
 GameObject:
@@ -2242,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 6015146594314843462, guid: e389f545157cb364091f80a8c15ba558,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6015146594314843462, guid: e389f545157cb364091f80a8c15ba558,
         type: 3}

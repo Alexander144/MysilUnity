@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\Mountain.cs" />
     <Compile Include="Assets\Scripts\MovementManager.cs" />
     <Compile Include="Assets\Scripts\SetAnimationDone.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <None Include="Assets\Packs\MobileDepthWater\Shaders\WaterTwoSide\Depth\DiffuseDepthWaterTwoSide.shader" />
     <None Include="Assets\Packs\Tools\ToonStyleWater\ReadMe.txt" />
     <None Include="Assets\Packs\MobileDepthWater\Shaders\WaterOpaque\Height\DiffuseColorHeightWater.shader" />

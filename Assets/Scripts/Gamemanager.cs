@@ -6,6 +6,7 @@ public class Gamemanager : MonoBehaviour
 {
 
     public List<MovementManager> Persons;
+    public SpawnManager SpawnManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,6 @@ public class Gamemanager : MonoBehaviour
     {
         Debug.Log("Start");
         Persons.ForEach(person => { person.startRunning = true; person.StartRunningAnimation(); });
+        SpawnManager.StartSpawnWineBottles = true;
     }
 }
