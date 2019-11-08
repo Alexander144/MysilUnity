@@ -74,6 +74,7 @@
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterMaterialSwitcher.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
     <Compile Include="Assets\Mountain.cs" />
+    <Compile Include="Assets\MovementManager.cs" />
     <Compile Include="Assets\SetAnimationDone.cs" />
     <Compile Include="Assets\Tools\quizcanners\Scripts\Countless\Countless.cs" />
     <Compile Include="Assets\Tools\quizcanners\Scripts\Countless\CountlessCfg.cs" />
