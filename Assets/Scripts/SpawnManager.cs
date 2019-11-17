@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject WineBottle;
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -18,7 +19,10 @@ public class SpawnManager : MonoBehaviour
     {
         if (StartSpawnWineBottles)
         {
-            Instantiate(WineBottle, SpawningPoint.position + new Vector3(Random.Range(-5f, 5f), 5f, Random.Range(-5f, 5f)), Quaternion.identity);
+            if (Random.Range(0f, 100f)>80f)
+            {         
+                Instantiate(WineBottle, SpawningPoint.position + new Vector3(Random.Range(-5f, 5f), 5f, Random.Range(-5f, 5f)), Quaternion.identity);
+            }
         }
     }
 }

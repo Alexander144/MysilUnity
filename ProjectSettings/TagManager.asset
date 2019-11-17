@@ -7,6 +7,7 @@ TagManager:
   - Water
   - Start
   - Destroy
+  - Wine
   layers:
   - Default
   - TransparentFX
