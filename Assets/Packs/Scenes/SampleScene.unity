@@ -14991,7 +14991,6 @@ GameObject:
   - component: {fileID: 629718478}
   - component: {fileID: 629718477}
   - component: {fileID: 629718476}
-  - component: {fileID: 629718480}
   m_Layer: 0
   m_Name: MovementBeach
   m_TagString: Untagged
@@ -15075,19 +15074,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0.18, y: 0, z: 0}
---- !u!65 &629718480
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629718475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15.52, y: 0.000000037252903, z: 22.57}
-  m_Center: {x: 0, y: 47.44, z: 0}
 --- !u!1 &638848869
 GameObject:
   m_ObjectHideFlags: 0
@@ -47557,6 +47543,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canon1
       objectReference: {fileID: 0}
+    - target: {fileID: 3887253286934246562, guid: 7f475da2772c57547a8cc1274a50f2fc,
+        type: 3}
+      propertyPath: Ball
+      value: 
+      objectReference: {fileID: 2194295643311610571, guid: 10ef544e7c4f0e34b9c2561ed5528284,
+        type: 3}
     - target: {fileID: 3887253286934246561, guid: 7f475da2772c57547a8cc1274a50f2fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47612,12 +47604,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3887253286934246562, guid: 7f475da2772c57547a8cc1274a50f2fc,
-        type: 3}
-      propertyPath: Ball
-      value: 
-      objectReference: {fileID: 2194295643311610571, guid: 10ef544e7c4f0e34b9c2561ed5528284,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f475da2772c57547a8cc1274a50f2fc, type: 3}
 --- !u!1001 &4260885182382784177
