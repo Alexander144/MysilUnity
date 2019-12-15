@@ -86,6 +86,7 @@ public class Gamemanager : MonoBehaviour
 
     public void StartGame()
     {
+        time = System.TimeSpan.FromSeconds(120);
         Debug.Log("Start");
         Persons.ForEach(person => { if (person) { person.startRunning = true; person.StartRunningAnimation(); } });
         SpawnManager.StartSpawnWineBottles = true;
