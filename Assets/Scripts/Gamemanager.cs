@@ -46,6 +46,7 @@ public class Gamemanager : MonoBehaviour
         }
         if (time <= System.TimeSpan.Zero && !gameover)
         {
+            this.GetComponent<AudioSource>().Stop();
             startGame = false;
             gameover = true;
             SpawnManager.StartSpawnWineBottles = false;
@@ -61,6 +62,12 @@ public class Gamemanager : MonoBehaviour
 
             MovePlayers(Winnerspot.transform.position + new Vector3(Random.Range(-1f, 1f), 0, 0), bestPersons);
             MovePlayers(Loserspot.transform.position + new Vector3(Random.Range(-1f, 1f), 0, 0), loserPersons);
+            if (bestPersons.Count > 1)
+            {
+                loserPersons.ForEach(person => Destroy(person.transform.gameObject));
+                Players.RemoveAll(player => player == null);                
+                Points.ForEach(point => point.transform.Find("Points").GetComponent<Text>().text = "0");
+            }
             //bestPersons.ForEach(person => { var mvPerson = person.GetComponent<MovementManager>(); mvPerson.GameDone(Winnerspot.transform.position); });
             //loserPersons.ForEach(person => { var mvPerson = person.GetComponent<MovementManager>(); mvPerson.GameDone(Loserspot.transform.position); });
         }
@@ -70,16 +77,19 @@ public class Gamemanager : MonoBehaviour
     {
         foreach (var person in persons)
         {
-            var mvPerson = person.GetComponent<MovementManager>();
-            mvPerson.GameDone(position);
+            if (person) {
+                var mvPerson = person.GetComponent<MovementManager>();
+                mvPerson.GameDone(position);
+            }
         }
     }
 
     public void StartGame()
     {
         Debug.Log("Start");
-        Persons.ForEach(person => { person.startRunning = true; person.StartRunningAnimation(); });
+        Persons.ForEach(person => { if (person) { person.startRunning = true; person.StartRunningAnimation(); } });
         SpawnManager.StartSpawnWineBottles = true;
         startGame = true;
+        this.GetComponent<AudioSource>().Play();
     }
 }

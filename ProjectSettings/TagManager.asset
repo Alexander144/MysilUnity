@@ -8,6 +8,9 @@ TagManager:
   - Start
   - Destroy
   - Wine
+  - Person
+  - Ball
+  - MovementPlane
   layers:
   - Default
   - TransparentFX

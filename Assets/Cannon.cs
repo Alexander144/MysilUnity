@@ -16,5 +16,6 @@ public class Cannon : MonoBehaviour
         rigid.AddForce(new Vector3(0f, 500f, 0f));
         Flash.Play();
         Smoke.Play();
+        this.GetComponent<AudioSource>().Play();
     }
 }

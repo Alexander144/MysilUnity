@@ -11,6 +11,8 @@ public class MovementManager : MonoBehaviour
     public bool startRunning = false;
     public Text Score;
     public bool gameIsDone = false;
+    public AudioClip Orc;
+    public AudioClip ScoreSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,12 +73,55 @@ public class MovementManager : MonoBehaviour
         return hit.position;
     }
 
+    private void AddPoints(int number)
+    {
+        Score.text = (double.Parse(Score.text) + number).ToString();
+        if (number > 0)
+        {
+            PointsAdded(Color.green);
+        }
+        else
+        {
+            PointsAdded(Color.red);
+        }
+    }
+
+    void PointsAdded(Color color)
+    {
+        Score.color = color;
+        this.GetComponent<SpriteRenderer>().color = color;
+        StartCoroutine(PointsEndAnimation());
+    }
+
+    IEnumerator PointsEndAnimation()
+    {
+        yield return new WaitForSeconds(2);
+        Score.color = Color.white;
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wine")
         {
+
+            var audio = this.GetComponent<AudioSource>();
+            audio.clip = ScoreSound;
+            audio.Play();
             Destroy(other.gameObject);
-            Score.text = (double.Parse(Score.text) + 1).ToString();
+            AddPoints(1);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Ball")
+        {
+            collision.transform.GetComponent<SphereCollider>().isTrigger = true;
+            AddPoints(-1);
+
+            var audio = this.GetComponent<AudioSource>();
+            audio.clip = Orc;
+            audio.Play();
         }
     }
 }

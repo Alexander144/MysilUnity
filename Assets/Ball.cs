@@ -21,4 +21,11 @@ public class Ball : MonoBehaviour
             rigidbody.MovePosition(transform.position + direction * Time.deltaTime);
         }
     }
-}
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "MovementPlane")
+        {
+            this.GetComponent<SphereCollider>().isTrigger = true;
+        }
+    }
+    }
