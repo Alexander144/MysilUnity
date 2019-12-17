@@ -114,7 +114,7 @@ public class MovementManager : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Ball")
+        if (collision.transform.tag == "Ball")
         {
             collision.transform.GetComponent<SphereCollider>().isTrigger = true;
             AddPoints(-1);
@@ -124,4 +124,13 @@ public class MovementManager : MonoBehaviour
             audio.Play();
         }
     }
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 3f);
+            this.GetComponent<NavMeshAgent>().enabled = false;
+            this.GetComponent<SpriteRenderer>().flipY = true;
+        }
+    } 
 }

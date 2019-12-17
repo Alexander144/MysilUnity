@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
+using UnityEngine.AI;
 
 public class Ship : MonoBehaviour
 {
@@ -20,8 +22,9 @@ public class Ship : MonoBehaviour
         {
             var random = new System.Random();
             int index = random.Next(Cannons.Count);
-            int peopleIndex = random.Next(Players.Count);
-            Cannons[index].Shoot(Players[peopleIndex].transform.position);
+            var validPlayers = Players.Where(player => player.GetComponent<NavMeshAgent>().enabled == true).ToList();
+            int peopleIndex = random.Next(validPlayers.Count);
+            Cannons[index].Shoot(validPlayers[peopleIndex].transform.position);
         }
     }
 }
